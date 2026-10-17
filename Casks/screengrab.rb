@@ -4,16 +4,16 @@ cask "screengrab" do
 
   url "https://github.com/FlorianRiquelme/screengrab/releases/download/v#{version}/Screengrab-#{version}.zip"
   name "Screengrab"
-  desc "Menu bar app for screenshots and screen recordings, made for pasting into AI agents"
+  desc "Screenshots and screen recordings, made for pasting into AI agents"
   homepage "https://github.com/FlorianRiquelme/screengrab"
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "Screengrab.app"
 
   # The app is not notarized, so Gatekeeper would refuse to open it.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Screengrab.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Screengrab.app"]
   end
 
   uninstall quit: "io.github.florianriquelme.screengrab"
