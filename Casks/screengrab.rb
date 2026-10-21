@@ -1,6 +1,6 @@
 cask "screengrab" do
-  version "1.2.1"
-  sha256 "5668f4f4b5b332bfae6fdad6eaa6455f1cff3870e0fced3ee9e22caadf854c98"
+  version "1.3.0"
+  sha256 "eb3a33d39400b6743ca0fe3319dcd5f5b1542abdab80bf84c274f0cdc3f54570"
 
   url "https://github.com/FlorianRiquelme/screengrab/releases/download/v#{version}/Screengrab-#{version}.zip"
   name "Screengrab"
